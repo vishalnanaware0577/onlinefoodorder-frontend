@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import api, { API_URL } from '../api/axios';
 
 import Navbar from '../components/Navbar';
-import api from '../api/axios';
+
 
 function Profile() {
   const [profile, setProfile] = useState(null);
