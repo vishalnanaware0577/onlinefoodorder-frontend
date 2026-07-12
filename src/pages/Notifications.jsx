@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 
 import Navbar from '../components/Navbar';
-import api from '../api/axios';
-
+import api, { API_URL } from '../api/axios';
 function Notifications() {
   const user = JSON.parse(localStorage.getItem('user'));
 
@@ -48,7 +47,7 @@ function Notifications() {
   useEffect(() => {
     fetchNotifications();
 
-    const socket = io('http://localhost:3000');
+const socket = io(API_URL);
 
     if (user?.user_id) {
       socket.emit('join-user-room', user.user_id);

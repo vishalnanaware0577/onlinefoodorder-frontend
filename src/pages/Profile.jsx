@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
+import api, { API_URL } from '../api/axios';
 
 import Navbar from '../components/Navbar';
 import api from '../api/axios';
@@ -141,10 +142,13 @@ function Profile() {
               <img
                 src={
                   profile.profile_image
-                    ? `http://localhost:3000${profile.profile_image}`
+                    ? `${API_URL}${profile.profile_image}`
                     : 'https://placehold.co/220x220?text=Profile'
                 }
-                alt="profile"
+                alt="Profile"
+                onError={(e) => {
+                  e.target.src = 'https://placehold.co/220x220?text=Profile';
+                }}
               />
             </div>
 

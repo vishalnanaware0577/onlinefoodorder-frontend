@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { FaHeart } from 'react-icons/fa';
 
 import Navbar from '../components/Navbar';
-import api from '../api/axios';
+import api, { API_URL } from '../api/axios';
 
 function RestaurantMenu() {
   const { restaurantId } = useParams();
@@ -140,7 +140,7 @@ function RestaurantMenu() {
                 <img
                   src={
                     food.image
-                      ? `http://localhost:3000${food.image}`
+                      ? `${API_URL}${item.food.image}`
                       : 'https://placehold.co/500x350?text=Food'
                   }
                   alt={food.food_name}

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 
 import Navbar from '../components/Navbar';
-import api from '../api/axios';
+import api, { API_URL } from '../api/axios';
 
 function HotelOwnerDashboard() {
   const navigate = useNavigate();
@@ -327,7 +327,7 @@ function HotelOwnerDashboard() {
                   <img
                     src={
                       item.image
-                        ? `http://localhost:3000${item.image}`
+                        ? `${API_URL}${item.food.image}`
                         : 'https://placehold.co/120x90?text=Hotel'
                     }
                     alt={item.restaurant_name}

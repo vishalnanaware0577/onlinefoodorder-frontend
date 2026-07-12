@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 
-import api from '../api/axios';
+import api, { API_URL } from '../api/axios';
 import Navbar from '../components/Navbar';
 
 function CustomerDashboard() {
@@ -160,7 +160,7 @@ function CustomerDashboard() {
                 <img
                   src={
                     item.image
-                      ? `http://localhost:3000${item.image}`
+                      ? `${API_URL}${item.food.image}`
                       : 'https://placehold.co/500x300?text=Restaurant'
                   }
                   alt={item.restaurant_name}

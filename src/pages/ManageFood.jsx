@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import Navbar from '../components/Navbar';
-import api from '../api/axios';
+import api, { API_URL } from '../api/axios';
 
 function ManageFood() {
   const { restaurantId } = useParams();
@@ -213,7 +213,7 @@ function ManageFood() {
                   <img
                     src={
                       food.image
-                        ? `http://localhost:3000${food.image}`
+                        ? `${API_URL}${item.food.image}`
                         : 'https://placehold.co/140x100?text=Food'
                     }
                     alt={food.food_name}

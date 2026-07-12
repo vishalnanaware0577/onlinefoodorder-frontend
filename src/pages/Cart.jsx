@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 
 import Navbar from '../components/Navbar';
-import api from '../api/axios';
+import api, { API_URL } from '../api/axios';
 
 function Cart() {
   const navigate = useNavigate();
@@ -100,7 +100,7 @@ function Cart() {
                   <img
                     src={
                       item.food?.image
-                        ? `http://localhost:3000${item.food.image}`
+                        ? `${API_URL}${item.food.image}`
                         : 'https://placehold.co/160x160?text=Food'
                     }
                     alt={item.food?.food_name}

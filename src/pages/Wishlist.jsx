@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import Navbar from '../components/Navbar';
-import api from '../api/axios';
+import api, { API_URL } from '../api/axios';
 
 function Wishlist() {
   const [wishlist, setWishlist] = useState([]);
@@ -78,7 +78,7 @@ function Wishlist() {
               <img
                 src={
                   item.food?.image
-                    ? `http://localhost:3000${item.food.image}`
+                    ? `${API_URL}${item.food.image}`
                     : 'https://placehold.co/400x250?text=Food'
                 }
                 alt={item.food?.food_name}
