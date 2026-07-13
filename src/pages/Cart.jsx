@@ -100,7 +100,7 @@ function Cart() {
                   <img
                     src={
                       item.food?.image
-                        ? `${API_URL}${item.food.image}`
+                        ? `${API_URL}${food.image}`
                         : 'https://placehold.co/160x160?text=Food'
                     }
                     alt={item.food?.food_name}

@@ -140,7 +140,7 @@ function RestaurantMenu() {
                 <img
                   src={
                     food.image
-                      ? `${API_URL}${item.food.image}`
+                      ? `${API_URL}${food.image}`
                       : 'https://placehold.co/500x350?text=Food'
                   }
                   alt={food.food_name}

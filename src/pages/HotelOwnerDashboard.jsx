@@ -327,10 +327,13 @@ function HotelOwnerDashboard() {
                   <img
                     src={
                       item.image
-                        ? `${API_URL}${item.food.image}`
+                        ? `${API_URL}${item.image}`
                         : 'https://placehold.co/120x90?text=Hotel'
                     }
                     alt={item.restaurant_name}
+                    onError={(e) => {
+                      e.target.src = 'https://placehold.co/120x90?text=Hotel';
+                    }}
                   />
 
                   <div className="owner-restaurant-info">

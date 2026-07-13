@@ -213,7 +213,7 @@ function ManageFood() {
                   <img
                     src={
                       food.image
-                        ? `${API_URL}${item.food.image}`
+                        ? `${API_URL}${food.image}`
                         : 'https://placehold.co/140x100?text=Food'
                     }
                     alt={food.food_name}

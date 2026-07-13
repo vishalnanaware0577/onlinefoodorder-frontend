@@ -160,7 +160,7 @@ function CustomerDashboard() {
                 <img
                   src={
                     item.image
-                      ? `${API_URL}${item.food.image}`
+                      ? `${API_URL}${food.image}`
                       : 'https://placehold.co/500x300?text=Restaurant'
                   }
                   alt={item.restaurant_name}
