@@ -160,10 +160,13 @@ function CustomerDashboard() {
                 <img
                   src={
                     item.image
-                      ? `${API_URL}${food.image}`
+                      ? `${API_URL}${item.image}`
                       : 'https://placehold.co/500x300?text=Restaurant'
                   }
                   alt={item.restaurant_name}
+                  onError={(e) => {
+                    e.target.src = 'https://placehold.co/500x300?text=Restaurant';
+                  }}
                 />
 
                 <span className={item.is_open ? 'open-pill' : 'closed-pill'}>

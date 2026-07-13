@@ -78,10 +78,13 @@ function Wishlist() {
               <img
                 src={
                   item.food?.image
-                    ? `${API_URL}${food.image}`
+                    ? `${API_URL}${item.food.image}`
                     : 'https://placehold.co/400x250?text=Food'
                 }
                 alt={item.food?.food_name}
+                onError={(e) => {
+                  e.target.src = 'https://placehold.co/400x250?text=Food';
+                }}
               />
 
               <div className="food-body">
